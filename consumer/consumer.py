@@ -1,32 +1,38 @@
-from producer.producer import kafka_topic
-from database.database import save_to_database
-from validation.validator import validate_order
+from kafka.queue_manager import transaction_queue
+from validation.validator import validate_transaction
+from database.database import save_transaction
 from logger.logger import write_log
 
+
 def consume_message():
+    """
+    Simulates Kafka Consumer.
+    Reads transaction from Queue,
+    validates it and stores it.
+    """
 
-    if not kafka_topic.empty():
+    if transaction_queue.empty():
 
-        message = kafka_topic.get()
+        write_log("INFO", "No Messages Available")
+        return
 
-        write_log("INFO","Consumer Consumed Message")
-        
-        write_log("INFO",f"Message: {message}")
+    message = transaction_queue.get()
 
-        # QA Validation
-        valid, result = validate_order(message)
+    write_log("INFO", "Consumer Received Message")
+    write_log("INFO", f"Message : {message}")
 
-        if valid:
-            write_log("INFO","Validation Passed")
-            save_to_database(message)
+    valid, result = validate_transaction(message)
 
-        else:
-            write_log("ERROR","Validation Failed")
+    if valid:
 
-            for error in result:
-                write_log("ERROR",error)
+        save_transaction(message)
 
-        return message
+        write_log("PASS", "Transaction Stored Successfully")
 
-    write_log("INFO","No Messages Available")
-    return None
+        return True, "Transaction Stored Successfully"
+
+    else:
+
+        write_log("FAIL", f"Validation Failed : {result}")
+
+        return False, result

@@ -1,25 +1,26 @@
 import json
 import os
 
-DB_FILE = "data/orders.json"
+DATABASE = "data/transactions.json"
+
+os.makedirs("data", exist_ok=True)
+
+if not os.path.exists(DATABASE):
+    with open(DATABASE, "w") as file:
+        json.dump([], file)
 
 
-def get_orders():
+def read_database():
 
-    if not os.path.exists(DB_FILE):
-        return []
-
-    with open(DB_FILE, "r") as file:
+    with open(DATABASE, "r") as file:
         return json.load(file)
 
 
-def save_to_database(order):
+def save_transaction(transaction):
 
-    orders = get_orders()
+    transactions = read_database()
 
-    orders.append(order)
+    transactions.append(transaction)
 
-    with open(DB_FILE, "w") as file:
-        json.dump(orders, file, indent=4)
-
-    print("✅ Order Stored Successfully")
+    with open(DATABASE, "w") as file:
+        json.dump(transactions, file, indent=4)

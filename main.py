@@ -1,13 +1,10 @@
-from producer.producer import publish_message
-from consumer.consumer import consume_message
+import uvicorn
 
-order = {
-    "order_id":101,
-    "customer":"Shruthika",
-    "amount":2500,
-    "status":"CREATED"
-}
+if __name__ == "__main__":
 
-publish_message(order)
-
-consume_message()
+    uvicorn.run(
+        "api.app:app",
+        host="127.0.0.1",
+        port=8000,
+        reload=True
+    )

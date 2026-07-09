@@ -1,10 +1,14 @@
-from queue import Queue
+from kafka.queue_manager import transaction_queue
 from logger.logger import write_log
 
-# Simulating Kafka Topic
-kafka_topic = Queue()
 
 def publish_message(message):
-    kafka_topic.put(message)
-    write_log("INFO","Producer Published Message")
-    write_log("INFO",f"Message: {message}")
+    """
+    Simulates Kafka Producer.
+    Publishes the transaction into Kafka Topic (Queue).
+    """
+
+    transaction_queue.put(message)
+
+    write_log("INFO", "Producer Published Transaction")
+    write_log("INFO", f"Message : {message}")

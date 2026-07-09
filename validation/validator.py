@@ -1,30 +1,33 @@
-from database.database import get_orders
+from database.database import read_database
 
-def validate_order(order):
+
+def validate_transaction(transaction):
 
     errors = []
 
-    # Mandatory Field Validation
-    if not order.get("order_id"):
-        errors.append("Order ID is missing")
+    if not transaction.get("transaction_id"):
+        errors.append("Transaction ID Missing")
 
-    if not order.get("customer"):
-        errors.append("Customer name is missing")
+    if not transaction.get("account_number"):
+        errors.append("Account Number Missing")
 
-    if order.get("amount", 0) <= 0:
-        errors.append("Amount should be greater than zero")
+    if transaction.get("amount", 0) <= 0:
+        errors.append("Invalid Amount")
 
-    if order.get("status") != "CREATED":
+    if transaction.get("status") != "INITIATED":
         errors.append("Invalid Status")
 
-    # Duplicate Validation
-    orders = get_orders()
+    # NEW VALIDATION
+    allowed_types = ["DEPOSIT", "WITHDRAW", "TRANSFER"]
 
-    for existing_order in orders:
+    if transaction.get("transaction_type") not in allowed_types:
+        errors.append("Invalid Transaction Type")
 
-        if existing_order["order_id"] == order["order_id"]:
-            errors.append("Duplicate Order ID")
-            break
+    database = read_database()
+
+    for record in database:
+        if record["transaction_id"] == transaction["transaction_id"]:
+            errors.append("Duplicate Transaction")
 
     if errors:
         return False, errors

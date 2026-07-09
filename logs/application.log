@@ -1,26 +1,35 @@
-[2026-07-09 18:28:04] [INFO] Producer Published Message
-[2026-07-09 18:28:04] [INFO] Consumer Consumed Message
-[2026-07-09 18:28:04] [INFO] Message: {'order_id': 102, 'customer': '', 'amount': -200, 'status': 'SUCCESS'}
-[2026-07-09 18:28:04] [ERROR] Validation Failed
-[2026-07-09 18:28:04] [ERROR] Customer name is missing
-[2026-07-09 18:28:04] [ERROR] Amount should be greater than zero
-[2026-07-09 18:28:04] [ERROR] Invalid Status
-[2026-07-09 18:28:19] [INFO] Producer Published Message
-[2026-07-09 18:28:19] [INFO] Message: {'order_id': 102, 'customer': '', 'amount': -200, 'status': 'SUCCESS'}
-[2026-07-09 18:28:19] [INFO] Consumer Consumed Message
-[2026-07-09 18:28:19] [INFO] Message: {'order_id': 102, 'customer': '', 'amount': -200, 'status': 'SUCCESS'}
-[2026-07-09 18:28:19] [ERROR] Validation Failed
-[2026-07-09 18:28:19] [ERROR] Customer name is missing
-[2026-07-09 18:28:19] [ERROR] Amount should be greater than zero
-[2026-07-09 18:28:19] [ERROR] Invalid Status
-[2026-07-09 18:32:32] [INFO] Producer Published Message
-[2026-07-09 18:32:32] [INFO] Message: {'order_id': 101, 'customer': 'Shruthika', 'amount': 2500, 'status': 'CREATED'}
-[2026-07-09 18:32:32] [INFO] Consumer Consumed Message
-[2026-07-09 18:32:32] [INFO] Message: {'order_id': 101, 'customer': 'Shruthika', 'amount': 2500, 'status': 'CREATED'}
-[2026-07-09 18:32:32] [INFO] Validation Passed
-[2026-07-09 18:32:38] [INFO] Producer Published Message
-[2026-07-09 18:32:38] [INFO] Message: {'order_id': 101, 'customer': 'Shruthika', 'amount': 2500, 'status': 'CREATED'}
-[2026-07-09 18:32:38] [INFO] Consumer Consumed Message
-[2026-07-09 18:32:38] [INFO] Message: {'order_id': 101, 'customer': 'Shruthika', 'amount': 2500, 'status': 'CREATED'}
-[2026-07-09 18:32:38] [ERROR] Validation Failed
-[2026-07-09 18:32:38] [ERROR] Duplicate Order ID
+[2026-07-09 20:24:58] [INFO] Producer Published Transaction
+[2026-07-09 20:24:58] [INFO] Message : {'transaction_id': 1001, 'account_number': 'ACC12345', 'amount': 5000, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+[2026-07-09 20:24:58] [INFO] Consumer Received Message
+[2026-07-09 20:24:58] [INFO] Message : {'transaction_id': 1001, 'account_number': 'ACC12345', 'amount': 5000, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+[2026-07-09 20:24:58] [PASS] Transaction Stored Successfully
+[2026-07-09 20:31:33] [INFO] Producer Published Transaction
+[2026-07-09 20:31:33] [INFO] Message : {'transaction_id': 1001, 'account_number': 'ACC001', 'amount': 5000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+[2026-07-09 20:31:33] [INFO] Consumer Received Message
+[2026-07-09 20:31:33] [INFO] Message : {'transaction_id': 1001, 'account_number': 'ACC001', 'amount': 5000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+[2026-07-09 20:31:33] [FAIL] Validation Failed : ['Duplicate Transaction']
+[2026-07-09 20:31:48] [INFO] Producer Published Transaction
+[2026-07-09 20:31:48] [INFO] Message : {'transaction_id': 1002, 'account_number': 'ACC001', 'amount': -500.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+[2026-07-09 20:31:48] [INFO] Consumer Received Message
+[2026-07-09 20:31:48] [INFO] Message : {'transaction_id': 1002, 'account_number': 'ACC001', 'amount': -500.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+[2026-07-09 20:31:48] [FAIL] Validation Failed : ['Invalid Amount']
+[2026-07-09 20:33:58] [INFO] Producer Published Transaction
+[2026-07-09 20:33:58] [INFO] Message : {'transaction_id': 1003, 'account_number': 'ACC001', 'amount': 1000.0, 'transaction_type': 'PAYMENT', 'status': 'INITIATED'}
+[2026-07-09 20:33:58] [INFO] Consumer Received Message
+[2026-07-09 20:33:58] [INFO] Message : {'transaction_id': 1003, 'account_number': 'ACC001', 'amount': 1000.0, 'transaction_type': 'PAYMENT', 'status': 'INITIATED'}
+[2026-07-09 20:33:58] [FAIL] Validation Failed : ['Invalid Transaction Type']
+[2026-07-09 20:34:23] [INFO] Producer Published Transaction
+[2026-07-09 20:34:23] [INFO] Message : {'transaction_id': 1004, 'account_number': 'ACC001', 'amount': 1000.0, 'transaction_type': 'TRANSFER', 'status': 'FAILED'}
+[2026-07-09 20:34:23] [INFO] Consumer Received Message
+[2026-07-09 20:34:23] [INFO] Message : {'transaction_id': 1004, 'account_number': 'ACC001', 'amount': 1000.0, 'transaction_type': 'TRANSFER', 'status': 'FAILED'}
+[2026-07-09 20:34:23] [FAIL] Validation Failed : ['Invalid Status']
+[2026-07-09 20:34:42] [INFO] Producer Published Transaction
+[2026-07-09 20:34:42] [INFO] Message : {'transaction_id': 1001, 'account_number': 'ACC001', 'amount': 5000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+[2026-07-09 20:34:42] [INFO] Consumer Received Message
+[2026-07-09 20:34:42] [INFO] Message : {'transaction_id': 1001, 'account_number': 'ACC001', 'amount': 5000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+[2026-07-09 20:34:42] [FAIL] Validation Failed : ['Duplicate Transaction']
+[2026-07-09 20:39:45] [INFO] Producer Published Transaction
+[2026-07-09 20:39:45] [INFO] Message : {'transaction_id': 1001, 'account_number': 'ACC001', 'amount': 5000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+[2026-07-09 20:39:45] [INFO] Consumer Received Message
+[2026-07-09 20:39:45] [INFO] Message : {'transaction_id': 1001, 'account_number': 'ACC001', 'amount': 5000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+[2026-07-09 20:39:45] [FAIL] Validation Failed : ['Duplicate Transaction']

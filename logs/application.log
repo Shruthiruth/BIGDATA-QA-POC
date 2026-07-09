@@ -1,0 +1,26 @@
+[2026-07-09 18:28:04] [INFO] Producer Published Message
+[2026-07-09 18:28:04] [INFO] Consumer Consumed Message
+[2026-07-09 18:28:04] [INFO] Message: {'order_id': 102, 'customer': '', 'amount': -200, 'status': 'SUCCESS'}
+[2026-07-09 18:28:04] [ERROR] Validation Failed
+[2026-07-09 18:28:04] [ERROR] Customer name is missing
+[2026-07-09 18:28:04] [ERROR] Amount should be greater than zero
+[2026-07-09 18:28:04] [ERROR] Invalid Status
+[2026-07-09 18:28:19] [INFO] Producer Published Message
+[2026-07-09 18:28:19] [INFO] Message: {'order_id': 102, 'customer': '', 'amount': -200, 'status': 'SUCCESS'}
+[2026-07-09 18:28:19] [INFO] Consumer Consumed Message
+[2026-07-09 18:28:19] [INFO] Message: {'order_id': 102, 'customer': '', 'amount': -200, 'status': 'SUCCESS'}
+[2026-07-09 18:28:19] [ERROR] Validation Failed
+[2026-07-09 18:28:19] [ERROR] Customer name is missing
+[2026-07-09 18:28:19] [ERROR] Amount should be greater than zero
+[2026-07-09 18:28:19] [ERROR] Invalid Status
+[2026-07-09 18:32:32] [INFO] Producer Published Message
+[2026-07-09 18:32:32] [INFO] Message: {'order_id': 101, 'customer': 'Shruthika', 'amount': 2500, 'status': 'CREATED'}
+[2026-07-09 18:32:32] [INFO] Consumer Consumed Message
+[2026-07-09 18:32:32] [INFO] Message: {'order_id': 101, 'customer': 'Shruthika', 'amount': 2500, 'status': 'CREATED'}
+[2026-07-09 18:32:32] [INFO] Validation Passed
+[2026-07-09 18:32:38] [INFO] Producer Published Message
+[2026-07-09 18:32:38] [INFO] Message: {'order_id': 101, 'customer': 'Shruthika', 'amount': 2500, 'status': 'CREATED'}
+[2026-07-09 18:32:38] [INFO] Consumer Consumed Message
+[2026-07-09 18:32:38] [INFO] Message: {'order_id': 101, 'customer': 'Shruthika', 'amount': 2500, 'status': 'CREATED'}
+[2026-07-09 18:32:38] [ERROR] Validation Failed
+[2026-07-09 18:32:38] [ERROR] Duplicate Order ID

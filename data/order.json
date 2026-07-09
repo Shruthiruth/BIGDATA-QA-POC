@@ -1,0 +1,8 @@
+[
+    {
+        "order_id": 101,
+        "customer": "Shruthika",
+        "amount": 2500,
+        "status": "CREATED"
+    }
+]

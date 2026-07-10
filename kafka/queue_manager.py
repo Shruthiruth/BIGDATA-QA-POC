@@ -2,4 +2,4 @@ from queue import Queue
 
 # Kafka Topic Simulation
 
-transaction_queue = Queue()
+kafka_topic = Queue()

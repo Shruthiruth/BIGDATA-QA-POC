@@ -1,5 +1,5 @@
-from kafka.queue_manager import transaction_queue
-from logger.logger import write_log
+from kafka.queue_manager import kafka_topic
+from logger.logger import logger
 
 
 def publish_message(message):
@@ -8,7 +8,7 @@ def publish_message(message):
     Publishes the transaction into Kafka Topic (Queue).
     """
 
-    transaction_queue.put(message)
+    kafka_topic.put(message)
 
-    write_log("INFO", "Producer Published Transaction")
-    write_log("INFO", f"Message : {message}")
+    logger.info("Producer Published Transaction")
+    logger.info(f"Message : {message}")

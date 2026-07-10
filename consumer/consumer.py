@@ -1,7 +1,7 @@
-from kafka.queue_manager import transaction_queue
+from kafka.queue_manager import kafka_topic
 from validation.validator import validate_transaction
 from database.database import save_transaction
-from logger.logger import write_log
+from logger.logger import logger
 
 
 def consume_message():
@@ -11,15 +11,16 @@ def consume_message():
     validates it and stores it.
     """
 
-    if transaction_queue.empty():
+    if kafka_topic.empty():
 
-        write_log("INFO", "No Messages Available")
-        return
+        logger.info("No Messages Available")
 
-    message = transaction_queue.get()
+        return False, "No Messages Available"
 
-    write_log("INFO", "Consumer Received Message")
-    write_log("INFO", f"Message : {message}")
+    message = kafka_topic.get()
+
+    logger.info("Consumer Received Message")
+    logger.info(f"Message : {message}")
 
     valid, result = validate_transaction(message)
 
@@ -27,12 +28,12 @@ def consume_message():
 
         save_transaction(message)
 
-        write_log("PASS", "Transaction Stored Successfully")
+        logger.info("Transaction Stored Successfully")
 
         return True, "Transaction Stored Successfully"
 
     else:
 
-        write_log("FAIL", f"Validation Failed : {result}")
+        logger.error(f"Validation Failed : {result}")
 
         return False, result

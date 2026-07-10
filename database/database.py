@@ -1,26 +1,32 @@
-import json
-import os
+from pymongo import MongoClient
+from config import MONGO_URI, DATABASE_NAME, COLLECTION_NAME
 
-DATABASE = "data/transactions.json"
+client = MongoClient(MONGO_URI)
 
-os.makedirs("data", exist_ok=True)
+db = client[DATABASE_NAME]
 
-if not os.path.exists(DATABASE):
-    with open(DATABASE, "w") as file:
-        json.dump([], file)
-
-
-def read_database():
-
-    with open(DATABASE, "r") as file:
-        return json.load(file)
+collection = db[COLLECTION_NAME]
 
 
 def save_transaction(transaction):
+    result = collection.insert_one(transaction)
+    return result.inserted_id
 
-    transactions = read_database()
 
-    transactions.append(transaction)
+def read_database():
+    return list(collection.find({}, {"_id": 0}))
 
-    with open(DATABASE, "w") as file:
-        json.dump(transactions, file, indent=4)
+
+def get_transaction(transaction_id):
+    return collection.find_one(
+        {"transaction_id": transaction_id},
+        {"_id": 0}
+    )
+
+
+def delete_transaction(transaction_id):
+    result = collection.delete_one(
+        {"transaction_id": transaction_id}
+    )
+
+    return result.deleted_count

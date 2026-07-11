@@ -29,4 +29,4 @@ def delete_transaction(transaction_id):
         {"transaction_id": transaction_id}
     )
 
-    return result.deleted_count
+    return result.deleted_count > 0

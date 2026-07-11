@@ -35,4 +35,4 @@ def validate_transaction(transaction):
     if errors:
         return False, errors
 
-    return True, transaction
+    return True, "Validation Passed"

@@ -1,5 +1,5 @@
 from validation.validator import validate_transaction
-
+import pytest
 
 def test_valid_transaction():
 
@@ -66,3 +66,33 @@ def test_invalid_status():
     assert valid is False
 
     assert "Invalid Status" in result
+    
+    
+@pytest.mark.parametrize(
+    "status",
+    [
+        "DONE",
+        "PENDING",
+        "ERROR"
+    ]
+)
+
+def test_invalid_status(client,status):
+
+    payload={
+
+        "transaction_id":9001,
+
+        "account_number":"ACC001",
+
+        "amount":500,
+
+        "transaction_type":"DEPOSIT",
+
+        "status":status
+
+    }
+
+    response=client.post("/transaction",json=payload)
+
+    assert response.status_code==400

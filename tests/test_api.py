@@ -1,22 +1,15 @@
-from fastapi.testclient import TestClient
-from api.app import app
-
-
-
-
 def test_home(client):
 
     response = client.get("/")
 
     assert response.status_code == 200
-
     assert response.json()["message"] == "Big Data QA POC is Running"
 
 
 def test_create_valid_transaction(client):
 
     payload = {
-        "transaction_id": 6868,
+        "transaction_id": 8233,
         "account_number": "ACC500",
         "amount": 8000,
         "transaction_type": "DEPOSIT",
@@ -26,7 +19,6 @@ def test_create_valid_transaction(client):
     response = client.post("/transaction", json=payload)
 
     assert response.status_code == 201
-
     assert response.json()["status"] == "SUCCESS"
 
 
@@ -42,8 +34,7 @@ def test_invalid_amount(client):
 
     response = client.post("/transaction", json=payload)
 
-    assert response.status_code == 201
-
+    assert response.status_code == 400
     assert response.json()["status"] == "FAILED"
 
 
@@ -59,4 +50,5 @@ def test_invalid_transaction_type(client):
 
     response = client.post("/transaction", json=payload)
 
+    assert response.status_code == 400
     assert response.json()["status"] == "FAILED"

@@ -8,17 +8,11 @@ from database.database import (
 def test_database_insert():
 
     transaction = {
-
         "transaction_id": 9991,
-
         "account_number": "ACC999",
-
         "amount": 2500,
-
         "transaction_type": "DEPOSIT",
-
         "status": "INITIATED"
-
     }
 
     save_transaction(transaction)
@@ -26,7 +20,6 @@ def test_database_insert():
     result = get_transaction(9991)
 
     assert result is not None
-
     assert result["transaction_id"] == 9991
 
 

@@ -68,3 +68,96 @@
 2026-07-10 11:19:43,190 - INFO - Consumer Received Message
 2026-07-10 11:19:43,190 - INFO - Message : {'transaction_id': 1002, 'account_number': 'ACC003', 'amount': 53000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
 2026-07-10 11:19:43,256 - INFO - Transaction Stored Successfully
+2026-07-14 16:55:55,412 | INFO | HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-07-14 16:55:55,423 | INFO | Producer Published Transaction
+2026-07-14 16:55:55,424 | INFO | Message : {'transaction_id': 6868, 'account_number': 'ACC500', 'amount': 8000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 16:55:55,424 | INFO | Consumer Received Message
+2026-07-14 16:55:55,424 | INFO | Message : {'transaction_id': 6868, 'account_number': 'ACC500', 'amount': 8000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 16:56:26,549 | INFO | Producer Published Transaction
+2026-07-14 16:56:26,549 | INFO | Message : {'transaction_id': 5002, 'account_number': 'ACC501', 'amount': -500.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 16:56:26,549 | INFO | Consumer Received Message
+2026-07-14 16:56:26,549 | INFO | Message : {'transaction_id': 5002, 'account_number': 'ACC501', 'amount': -500.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 16:56:57,296 | INFO | Producer Published Transaction
+2026-07-14 16:56:57,296 | INFO | Message : {'transaction_id': 5003, 'account_number': 'ACC502', 'amount': 2000.0, 'transaction_type': 'PAYMENT', 'status': 'INITIATED'}
+2026-07-14 16:56:57,297 | INFO | Consumer Received Message
+2026-07-14 16:56:57,297 | INFO | Message : {'transaction_id': 5003, 'account_number': 'ACC502', 'amount': 2000.0, 'transaction_type': 'PAYMENT', 'status': 'INITIATED'}
+2026-07-14 16:59:29,839 | INFO | Producer Published Transaction
+2026-07-14 16:59:29,839 | INFO | Message : {'transaction_id': 9001, 'account_number': 'ACC001', 'amount': 500.0, 'transaction_type': 'DEPOSIT', 'status': 'DONE'}
+2026-07-14 16:59:29,839 | INFO | Consumer Received Message
+2026-07-14 16:59:29,839 | INFO | Message : {'transaction_id': 9001, 'account_number': 'ACC001', 'amount': 500.0, 'transaction_type': 'DEPOSIT', 'status': 'DONE'}
+2026-07-14 17:00:00,525 | INFO | Producer Published Transaction
+2026-07-14 17:00:00,526 | INFO | Message : {'transaction_id': 9001, 'account_number': 'ACC001', 'amount': 500.0, 'transaction_type': 'DEPOSIT', 'status': 'PENDING'}
+2026-07-14 17:00:00,526 | INFO | Consumer Received Message
+2026-07-14 17:00:00,526 | INFO | Message : {'transaction_id': 9001, 'account_number': 'ACC001', 'amount': 500.0, 'transaction_type': 'DEPOSIT', 'status': 'PENDING'}
+2026-07-14 17:00:31,561 | INFO | Producer Published Transaction
+2026-07-14 17:00:31,561 | INFO | Message : {'transaction_id': 9001, 'account_number': 'ACC001', 'amount': 500.0, 'transaction_type': 'DEPOSIT', 'status': 'ERROR'}
+2026-07-14 17:00:31,561 | INFO | Consumer Received Message
+2026-07-14 17:00:31,561 | INFO | Message : {'transaction_id': 9001, 'account_number': 'ACC001', 'amount': 500.0, 'transaction_type': 'DEPOSIT', 'status': 'ERROR'}
+2026-07-14 17:01:09,010 | INFO | HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-07-14 17:01:09,023 | INFO | Producer Published Transaction
+2026-07-14 17:01:09,023 | INFO | Message : {'transaction_id': 6868, 'account_number': 'ACC500', 'amount': 8000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:01:09,024 | INFO | Consumer Received Message
+2026-07-14 17:01:09,024 | INFO | Message : {'transaction_id': 6868, 'account_number': 'ACC500', 'amount': 8000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:01:40,211 | INFO | Producer Published Transaction
+2026-07-14 17:01:40,211 | INFO | Message : {'transaction_id': 5002, 'account_number': 'ACC501', 'amount': -500.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:01:40,212 | INFO | Consumer Received Message
+2026-07-14 17:01:40,212 | INFO | Message : {'transaction_id': 5002, 'account_number': 'ACC501', 'amount': -500.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:02:11,164 | INFO | Producer Published Transaction
+2026-07-14 17:02:11,165 | INFO | Message : {'transaction_id': 5003, 'account_number': 'ACC502', 'amount': 2000.0, 'transaction_type': 'PAYMENT', 'status': 'INITIATED'}
+2026-07-14 17:02:11,165 | INFO | Consumer Received Message
+2026-07-14 17:02:11,165 | INFO | Message : {'transaction_id': 5003, 'account_number': 'ACC502', 'amount': 2000.0, 'transaction_type': 'PAYMENT', 'status': 'INITIATED'}
+2026-07-14 17:05:14,590 | INFO | HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-07-14 17:05:14,605 | INFO | Producer Published Transaction
+2026-07-14 17:05:14,606 | INFO | Message : {'transaction_id': 8237, 'account_number': 'ACC500', 'amount': 8000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:05:14,606 | INFO | Consumer Received Message
+2026-07-14 17:05:14,606 | INFO | Message : {'transaction_id': 8237, 'account_number': 'ACC500', 'amount': 8000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:05:52,816 | INFO | HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-07-14 17:05:52,823 | INFO | Producer Published Transaction
+2026-07-14 17:05:52,824 | INFO | Message : {'transaction_id': 8237, 'account_number': 'ACC500', 'amount': 8000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:05:52,824 | INFO | Consumer Received Message
+2026-07-14 17:05:52,824 | INFO | Message : {'transaction_id': 8237, 'account_number': 'ACC500', 'amount': 8000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:06:24,332 | INFO | Producer Published Transaction
+2026-07-14 17:06:24,333 | INFO | Message : {'transaction_id': 5002, 'account_number': 'ACC501', 'amount': -500.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:06:24,333 | INFO | Consumer Received Message
+2026-07-14 17:06:24,333 | INFO | Message : {'transaction_id': 5002, 'account_number': 'ACC501', 'amount': -500.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:06:55,155 | INFO | Producer Published Transaction
+2026-07-14 17:06:55,155 | INFO | Message : {'transaction_id': 5003, 'account_number': 'ACC502', 'amount': 2000.0, 'transaction_type': 'PAYMENT', 'status': 'INITIATED'}
+2026-07-14 17:06:55,155 | INFO | Consumer Received Message
+2026-07-14 17:06:55,156 | INFO | Message : {'transaction_id': 5003, 'account_number': 'ACC502', 'amount': 2000.0, 'transaction_type': 'PAYMENT', 'status': 'INITIATED'}
+2026-07-14 17:12:13,563 | INFO | HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-07-14 17:12:13,592 | INFO | Producer Published Transaction
+2026-07-14 17:12:13,592 | INFO | Message : {'transaction_id': 8237, 'account_number': 'ACC500', 'amount': 8000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:12:13,592 | INFO | Consumer Received Message
+2026-07-14 17:12:13,593 | INFO | Message : {'transaction_id': 8237, 'account_number': 'ACC500', 'amount': 8000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:12:45,997 | INFO | Producer Published Transaction
+2026-07-14 17:12:45,997 | INFO | Message : {'transaction_id': 5002, 'account_number': 'ACC501', 'amount': -500.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:12:45,998 | INFO | Consumer Received Message
+2026-07-14 17:12:45,998 | INFO | Message : {'transaction_id': 5002, 'account_number': 'ACC501', 'amount': -500.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:13:17,794 | INFO | Producer Published Transaction
+2026-07-14 17:13:17,794 | INFO | Message : {'transaction_id': 5003, 'account_number': 'ACC502', 'amount': 2000.0, 'transaction_type': 'PAYMENT', 'status': 'INITIATED'}
+2026-07-14 17:13:17,795 | INFO | Consumer Received Message
+2026-07-14 17:13:17,795 | INFO | Message : {'transaction_id': 5003, 'account_number': 'ACC502', 'amount': 2000.0, 'transaction_type': 'PAYMENT', 'status': 'INITIATED'}
+2026-07-14 17:24:42,475 | INFO | HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-07-14 17:24:42,507 | INFO | Producer Published Transaction
+2026-07-14 17:24:42,508 | INFO | Message : {'transaction_id': 8237, 'account_number': 'ACC500', 'amount': 8000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:24:42,508 | INFO | Consumer Received Message
+2026-07-14 17:24:42,509 | INFO | Message : {'transaction_id': 8237, 'account_number': 'ACC500', 'amount': 8000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:24:42,943 | INFO | Transaction Stored Successfully
+2026-07-14 17:24:42,951 | INFO | HTTP Request: POST http://testserver/transaction "HTTP/1.1 201 Created"
+2026-07-14 17:24:42,970 | INFO | Producer Published Transaction
+2026-07-14 17:24:42,971 | INFO | Message : {'transaction_id': 5002, 'account_number': 'ACC501', 'amount': -500.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:24:42,972 | INFO | Consumer Received Message
+2026-07-14 17:24:42,973 | INFO | Message : {'transaction_id': 5002, 'account_number': 'ACC501', 'amount': -500.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:24:43,012 | ERROR | Validation Failed : ['Invalid Amount']
+2026-07-14 17:24:43,017 | INFO | HTTP Request: POST http://testserver/transaction "HTTP/1.1 201 Created"
+2026-07-14 17:24:43,798 | INFO | Producer Published Transaction
+2026-07-14 17:24:43,798 | INFO | Message : {'transaction_id': 5003, 'account_number': 'ACC502', 'amount': 2000.0, 'transaction_type': 'PAYMENT', 'status': 'INITIATED'}
+2026-07-14 17:24:43,799 | INFO | Consumer Received Message
+2026-07-14 17:24:43,799 | INFO | Message : {'transaction_id': 5003, 'account_number': 'ACC502', 'amount': 2000.0, 'transaction_type': 'PAYMENT', 'status': 'INITIATED'}
+2026-07-14 17:24:43,834 | ERROR | Validation Failed : ['Invalid Transaction Type']
+2026-07-14 17:24:43,839 | INFO | HTTP Request: POST http://testserver/transaction "HTTP/1.1 201 Created"
+2026-07-14 17:26:32,009 | INFO | Producer Published Transaction
+2026-07-14 17:26:32,012 | INFO | Message : {'transaction_id': 8234, 'account_number': 'ACC500', 'amount': 8000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:26:32,013 | INFO | Consumer Received Message
+2026-07-14 17:26:32,013 | INFO | Message : {'transaction_id': 8234, 'account_number': 'ACC500', 'amount': 8000.0, 'transaction_type': 'DEPOSIT', 'status': 'INITIATED'}
+2026-07-14 17:26:32,480 | INFO | Transaction Stored Successfully
